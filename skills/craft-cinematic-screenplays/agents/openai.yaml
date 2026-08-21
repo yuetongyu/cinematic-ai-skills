@@ -1,0 +1,4 @@
+interface:
+  display_name: "世界级电影编剧"
+  short_description: "从人物选择、场景转折与视听因果开发世界级电影剧本创作"
+  default_prompt: "使用 $craft-cinematic-screenplays 把我的创意开发成具有鲜明作者命题、人物选择、场景转折、视觉叙事和可拍摄性的电影剧本。"
