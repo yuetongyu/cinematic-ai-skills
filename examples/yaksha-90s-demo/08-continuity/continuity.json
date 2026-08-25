@@ -1,0 +1,56 @@
+{
+  "schema_version": "1.0.0",
+  "packet_type": "CONTINUITY_LEDGER",
+  "block_id": "CON001",
+  "revision": 1,
+  "project_id": "YAKSHA-001",
+  "episode_id": "EP001",
+  "source_revision": "shots:SHP001@1",
+  "depends_on": [
+    "SHP001@1"
+  ],
+  "status": "review",
+  "locked_fields": [
+    "payload.states"
+  ],
+  "controlled_fields": {},
+  "open_fields": [],
+  "assumptions": [],
+  "continuity_in": {},
+  "continuity_out": {
+    "CHR001.injury": "left_forearm_cut_stage_1",
+    "CHR001.allegiance": "self-chosen guardian",
+    "PRP001.state": "broken",
+    "ENV001.state": "channel-flowing"
+  },
+  "change_log": [
+    {
+      "revision": 1,
+      "summary": "Recorded the irreversible state progression across SH001-SH004."
+    }
+  ],
+  "payload": {
+    "states": [
+      {
+        "shot_id": "SH001",
+        "in": {"CHR001.injury": "none", "PRP001.state": "intact"},
+        "out": {"CHR001.injury": "none", "PRP001.state": "intact"}
+      },
+      {
+        "shot_id": "SH002",
+        "in": {"CHR001.injury": "none", "PRP001.state": "intact"},
+        "out": {"CHR001.injury": "none", "PRP001.state": "intact"}
+      },
+      {
+        "shot_id": "SH003",
+        "in": {"CHR001.injury": "none", "PRP001.state": "intact"},
+        "out": {"CHR001.injury": "left_forearm_cut_stage_1", "PRP001.state": "broken"}
+      },
+      {
+        "shot_id": "SH004",
+        "in": {"CHR001.injury": "left_forearm_cut_stage_1", "PRP001.state": "broken"},
+        "out": {"CHR001.injury": "left_forearm_cut_stage_1", "PRP001.state": "broken", "ENV001.state": "channel-flowing"}
+      }
+    ]
+  }
+}

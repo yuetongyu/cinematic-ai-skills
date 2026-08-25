@@ -1,4 +1,4 @@
 interface:
   display_name: "世界神话编剧与研究"
-  short_description: "检索世界神话数据并转化为可靠的剧本、世界观与角色资产"
-  default_prompt: "用世界神话 skill 检索内置或指定的数据源，区分史料、版本与改编，并把结果转成可拍的剧本、世界观或神话资产设计。"
+  short_description: "检索世界神话版本并输出可追溯、可供影视改编的主体研究包"
+  default_prompt: "使用 $craft-world-mythology 检索内置或指定数据源，区分史料、版本与改编，并输出可供编剧和制片链接收的 RESEARCH_PACKET。"

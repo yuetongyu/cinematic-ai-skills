@@ -1,0 +1,86 @@
+{
+  "schema_version": "1.0.0",
+  "packet_type": "ACTION_PACKET",
+  "block_id": "ACT001",
+  "revision": 1,
+  "project_id": "YAKSHA-001",
+  "episode_id": "EP001",
+  "source_revision": "script:SCR001@1",
+  "depends_on": [
+    "SCR001@1",
+    "TIM001@1",
+    "ASR001@1"
+  ],
+  "status": "draft",
+  "locked_fields": [
+    "payload.start_state",
+    "payload.action_path",
+    "payload.contact_and_force",
+    "payload.end_state"
+  ],
+  "controlled_fields": {
+    "payload.performance_amplitude": "within cinematic-ai-comic profile"
+  },
+  "open_fields": [
+    "payload.camera_interpretation"
+  ],
+  "assumptions": [
+    "The hunter remains offscreen in the action review board."
+  ],
+  "continuity_in": {
+    "CHR001.injury": "none",
+    "PRP001.state": "intact"
+  },
+  "continuity_out": {
+    "CHR001.injury": "left_forearm_cut_stage_1",
+    "PRP001.state": "broken",
+    "ENV001.state": "channel-flowing"
+  },
+  "change_log": [
+    {
+      "revision": 1,
+      "summary": "Designed the oath-breaking action as a four-phase causal chain."
+    }
+  ],
+  "payload": {
+    "scene_id": "SC002",
+    "beat_id": "B003",
+    "timing_refs": ["T003"],
+    "time_range": [40.0, 70.0],
+    "dramatic_function": "The Yaksha uses the body that enforced the oath to break it.",
+    "participants": ["CHR001"],
+    "asset_refs": ["CHR001", "ENV001", "PRP001"],
+    "space_axis": "cistern seal to outer gate",
+    "screen_direction": "CHR001 commits from screen right toward screen left, then faces screen right",
+    "start_state": "Right hand near the seal, left foot forward, child behind the Yaksha.",
+    "action_path": "The left forearm rises across the head line to intercept the descending blade while the pelvis stays anchored; the right palm drives forward into the seal after impact.",
+    "contact_and_force": "Blade force travels into the left forearm and rear leg; the right palm fractures the seal at chest height; water pressure opens the sluice.",
+    "end_state": "Left forearm wounded, seal broken, water moving past the Yaksha toward the child, torso turned toward the hunters.",
+    "environment_response": "Stone fragments fall before water pressure expands the crack; cloth and oath bands lag behind the torso turn.",
+    "vfx_phase": "fracture dust to water release; no emitted magic glow",
+    "performance_amplitude": "restrained until the seal fractures",
+    "panel_prompts": [
+      {
+        "panel": "A",
+        "phase": "intent_and_preparation",
+        "prompt": "Same Yaksha guardian, child behind the guardian, sealed rain cistern upstage-left, hunters threatening from screen right. The Yaksha plants the left foot toward the seal, pelvis low and stable, right hand hovering one palm-width from the stone seal, left forearm beginning to rise across the head line. The body protects the child without posing; oath bands and clothing remain nearly still. Clear full-body weight distribution, readable distances, no contact yet, cinematic AI comic profile."
+      },
+      {
+        "panel": "B",
+        "phase": "launch_and_commitment",
+        "prompt": "Same identities, wardrobe, props and courtyard coordinates. A hunter blade descends from screen right as the Yaksha commits the left forearm upward; rear leg loads, rib cage rotates only enough to intercept, right palm draws closer to the seal. Oath bands lag behind the torso, child remains behind the Yaksha. Show the irreversible commitment before impact, no wound and no broken seal yet, cinematic AI comic profile."
+      },
+      {
+        "panel": "C",
+        "phase": "contact_and_peak",
+        "prompt": "Same Yaksha and spatial axis at the exact double-contact instant: hunter blade stopped against the raised left forearm while the Yaksha's right palm strikes the stone seal at chest height. Force transfers through the left shoulder into the rear leg; the seal fractures outward from the palm, stone dust starts before water pressure expands the crack. The child remains shielded, oath bands trail the rotation, contact points fully readable, no magic glow, cinematic AI comic profile."
+      },
+      {
+        "panel": "D",
+        "phase": "recovery_and_consequence",
+        "prompt": "Same Yaksha after the committed action: wounded left forearm lowered but still guarding, broken cistern seal behind the right hand, released water moving toward screen left past the child. The Yaksha turns the torso and gaze back toward hunters on screen right while the feet recover balance; wet cloth, displaced dust and trailing oath bands show delayed motion. Preserve the damage and new water state, cinematic AI comic profile."
+      }
+    ],
+    "contact_sheet_prompt": "A clean 2x2 action continuity contact sheet using the same Yaksha guardian, child, rain cistern courtyard, proportions, wardrobe, oath bands and screen axis in every equal-sized panel. Reading order: preparation, irreversible interception, double contact and seal fracture, wounded recovery with released water. Physical state must advance monotonically; no swapped sides, weapon hand changes, reset damage, random camera changes or text rendered inside the image."
+  }
+}

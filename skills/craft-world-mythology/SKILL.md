@@ -1,6 +1,6 @@
 ---
 name: craft-world-mythology
-description: 世界神话研究与影视改编 skill。用于从用户提供的神话数据中检索神祇、英雄、异兽、关系事件、武器法宝和术法体系，并结合可靠网络来源完成神话考据、谱系比较、世界观设计、角色/怪物/道具开发、预告片与剧本改编。适用于“查某个神话人物”“比较不同神话体系”“把神话改成电影/剧集设定”“设计神话传承或神话世界”“检查跨文化混用是否失真”等请求；必须区分数据集事实、来源事实、不同版本与原创改编。
+description: 世界神话研究与影视改编 skill。用于从用户提供的神话数据中检索神祇、英雄、异兽、关系事件、武器法宝和术法体系，并结合可靠网络来源完成神话考据、谱系比较、世界观设计、角色/怪物/道具开发、预告片、剧本与 AI 漫剧改编。适用于“查某个神话人物”“根据夜叉等主体开发故事”“比较不同神话体系”“把神话改成电影/剧集设定”“设计神话传承或神话世界”“检查跨文化混用是否失真”等请求；必须区分数据集事实、来源事实、不同版本与原创改编。作为制片链研究适配器时输出可供编剧、资产、动作和总控直接引用的 RESEARCH_PACKET。
 ---
 
 # 世界神话编剧与研究
@@ -22,6 +22,8 @@ skill 内置的默认数据源是 `references/world-mythology-dataset.md`，它�
 5. **事实审查**：识别数据集中的版本混合、后世改写、疑似模板、争议叙述和不应当直接当作史实的内容。
 
 涉及剧本结构时，继续使用 `$craft-cinematic-screenplays`；涉及电影级生图或资产提示词时，继续使用 `$craft-cinematic-image-prompts` 或 `$craft-production-design-prompts`。本 skill 提供神话研究与改编逻辑，不替代这两个技能的摄影、表演和提示词流程。
+
+通过 `$orchestrate-ai-drama-production` 调用时，本 skill 是“神话研究适配器”。只负责建立可靠主体，不越权写完整剧本；输出必须能被未来的历史、游戏背景和小说世界研究适配器替换，而不要求下游改变接口。
 
 ## 数据检索
 
@@ -128,6 +130,17 @@ python3 scripts/query_mythology.py spells "占卜"
 ### 剧本交接包
 
 交给 `$craft-cinematic-screenplays`：一段准确的神话事实底稿、一段明确的项目改编、一条人物欲望线、一条因果线、关键场景和不可逆后果。不要把检索资料直接当成分场剧本。
+
+### RESEARCH_PACKET
+
+进入 AI 漫剧或完整制片链时，额外输出统一研究包：
+
+`packet_type / block_id / revision / depends_on → subject / research_domain → source_versions → evidence_layers → semantic_core → adaptation_boundaries → visual_motifs → action_motifs → disputes → unknowns → locked_fields / controlled_fields / open_fields / assumptions`
+
+- `semantic_core` 只保留让主体仍然是其自身的 3–7 项语义锚点，不把所有资料都锁死。
+- `adaptation_boundaries` 区分“不可伪装成传统事实”“可以大胆改编”“必须向用户确认”。
+- `visual_motifs` 和 `action_motifs` 必须来自来源或明确标为项目改编，不直接写成最终服装和招式。
+- 完整通用包头由 `$orchestrate-ai-drama-production` 管理；单独使用本 skill 时也可输出同结构的简化包。
 
 ## 质量与伦理护栏
 

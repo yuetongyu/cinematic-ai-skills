@@ -1,4 +1,4 @@
 interface:
   display_name: "影视概念资产提示词"
-  short_description: "生成角色资产、感情词典、情绪版、三视图与跨图锁定提示词"
-  default_prompt: "使用 $craft-production-design-prompts 先提炼角色、场景或物品的英雄概念；角色需要生产化时，锁定真人身份、年龄、皮肤、配饰、三视图，并生成角色专属感情词典与情绪版提示词。"
+  short_description: "提取全剧资产台账并生成角色、实体、场景、物品与跨图锁定"
+  default_prompt: "使用 $craft-production-design-prompts 从剧本提取 ASSET_REGISTRY，再按优先级生成角色、实体、场景或物品的 Hero Concept 与 Production Lock。"

@@ -1,0 +1,27 @@
+{
+  "schema_version": "1.0.0",
+  "project_id": "YAKSHA-001",
+  "title": "Yaksha 90s Demo",
+  "medium": "ai-drama",
+  "research_domain": "mythology",
+  "series": false,
+  "episode_id": "EP001",
+  "target_duration_seconds": 90.0,
+  "aspect_ratio": "9:16",
+  "fps": 24,
+  "language": "zh-CN",
+  "visual_profile": "cinematic-ai-comic",
+  "target_platform": "platform-neutral",
+  "current_stage": "research",
+  "assumptions": [],
+  "packet_index": [
+    "RSH001@1",
+    "SCR001@1",
+    "TIM001@1",
+    "ASR001@1",
+    "ACT001@1",
+    "SEQ001@1",
+    "SHP001@1",
+    "CON001@1"
+  ]
+}

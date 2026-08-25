@@ -1,0 +1,82 @@
+{
+  "schema_version": "1.0.0",
+  "packet_type": "TIMING_MAP",
+  "block_id": "TIM001",
+  "revision": 1,
+  "project_id": "YAKSHA-001",
+  "episode_id": "EP001",
+  "source_revision": "script:SCR001@1",
+  "depends_on": [
+    "SCR001@1"
+  ],
+  "status": "review",
+  "locked_fields": [
+    "payload.total_duration_seconds",
+    "payload.segments"
+  ],
+  "controlled_fields": {
+    "payload.segments[*].edit_flex": "within declared range"
+  },
+  "open_fields": [],
+  "assumptions": [
+    "Dialogue timing requires a performed read before final lock."
+  ],
+  "continuity_in": {},
+  "continuity_out": {},
+  "change_log": [
+    {
+      "revision": 1,
+      "summary": "Closed the visual timeline at 90 seconds."
+    }
+  ],
+  "payload": {
+    "total_duration_seconds": 90.0,
+    "fps": 24,
+    "segments": [
+      {
+        "timing_id": "T001",
+        "beat_refs": ["B001"],
+        "start": 0.0,
+        "end": 18.0,
+        "function": "Establish drought, ownership and the child's active crossing.",
+        "dialogue": "",
+        "sound": "dry wind, cup scraping stone",
+        "action_phase": "approach and threshold crossing",
+        "edit_flex": 2.0
+      },
+      {
+        "timing_id": "T002",
+        "beat_refs": ["B002"],
+        "start": 18.0,
+        "end": 40.0,
+        "function": "Reveal the Yaksha and convert threat into a listening choice.",
+        "dialogue": "你守的是水，还是他们的锁？",
+        "sound": "sudden air displacement, then held silence",
+        "action_phase": "arrival, braking, suspended contact",
+        "edit_flex": 2.0
+      },
+      {
+        "timing_id": "T003",
+        "beat_refs": ["B003"],
+        "start": 40.0,
+        "end": 70.0,
+        "function": "Force the irreversible oath-breaking choice.",
+        "dialogue": "",
+        "sound": "hunter blade, forearm impact, stone seal fracture",
+        "action_phase": "prepare, intercept, contact, seal break",
+        "edit_flex": 3.0
+      },
+      {
+        "timing_id": "T004",
+        "beat_refs": ["B004"],
+        "start": 70.0,
+        "end": 90.0,
+        "function": "Show the new moral order through water and facing direction.",
+        "dialogue": "",
+        "sound": "water overtakes the wind; distant hunters stop",
+        "action_phase": "inertia, turn, protective hold",
+        "edit_flex": 2.0
+      }
+    ]
+  }
+}

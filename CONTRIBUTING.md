@@ -8,10 +8,15 @@ prompt adjectives or one-off project lore.
 1. Keep each `SKILL.md` focused and below 500 lines when practical.
 2. Put detailed domain guidance in one-level `references/` files.
 3. Preserve the distinction between Hero Concept and Production Lock/Pass.
-4. Preserve handoff contracts: research evidence, screenplay causality, asset
-   DNA, and cinematography rules must remain distinguishable.
+4. Preserve production packet contracts: research evidence, screenplay
+   causality, timing, asset DNA, action physics, storyboard continuity, and
+   cinematography rules must remain distinguishable.
 5. Do not add private paths, credentials, generated caches, or model-specific
    parameters presented as universal rules.
+6. Do not let a downstream skill silently rewrite upstream `locked_fields`.
+   Increment the upstream revision and update only affected dependencies.
+7. Keep action contact sheets and storyboard contact sheets semantically
+   separate; both should retain independent-panel prompts.
 
 Validate a skill with the current Codex `skill-creator` validator when it is
 available. Also check that Markdown fences are balanced and that referenced
@@ -23,6 +28,17 @@ request:
 ```bash
 python3 scripts/validate_repo.py
 ```
+
+Changes to the production contract, action skill, storyboard skill, or final
+shot assembly must also keep the example project valid:
+
+```bash
+python3 skills/orchestrate-ai-drama-production/scripts/validate_project.py \
+  examples/yaksha-90s-demo --json
+```
+
+The example is a workflow fixture, not a canonical mythology adaptation.
+Do not turn its subject, plot, visual profile, or ending into a default.
 
 ## Mythology data changes
 

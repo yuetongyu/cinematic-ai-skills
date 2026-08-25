@@ -1,0 +1,99 @@
+{
+  "schema_version": "1.0.0",
+  "packet_type": "SCRIPT_PACKET",
+  "block_id": "SCR001",
+  "revision": 1,
+  "project_id": "YAKSHA-001",
+  "episode_id": "EP001",
+  "source_revision": "research:RSH001@1",
+  "depends_on": [
+    "RSH001@1"
+  ],
+  "status": "review",
+  "locked_fields": [
+    "payload.ending_state",
+    "payload.beats"
+  ],
+  "controlled_fields": {
+    "payload.dialogue": "may be compressed without changing choices"
+  },
+  "open_fields": [
+    "payload.visual_design"
+  ],
+  "assumptions": [
+    "The story is an explicit original adaptation."
+  ],
+  "continuity_in": {},
+  "continuity_out": {
+    "CHR001.allegiance": "self-chosen guardian",
+    "PRP001.state": "seal broken"
+  },
+  "change_log": [
+    {
+      "revision": 1,
+      "summary": "Created a 90-second subject-driven dramatic spine."
+    }
+  ],
+  "payload": {
+    "premise": "A feared Yaksha ordered to guard a sealed rain cistern must choose between its oath and a thirsty child.",
+    "theme_question": "Is protection still virtuous when it protects ownership instead of life?",
+    "character_pressure": {
+      "CHR001": "Wants to remain worthy of an ancient oath but recognizes the oath now serves hoarding.",
+      "CHR002": "Needs water for her family and refuses to treat the guardian as a mindless monster."
+    },
+    "scenes": [
+      {
+        "scene_id": "SC001",
+        "goal": "The child reaches the sealed cistern.",
+        "obstacle": "The Yaksha is bound to repel anyone without the owner's mark.",
+        "turn": "The child offers the empty cup to the guardian instead of attacking.",
+        "aftermath": "The Yaksha sees whom the oath is actually harming."
+      },
+      {
+        "scene_id": "SC002",
+        "goal": "The Yaksha decides what it truly guards.",
+        "obstacle": "Breaking the seal makes it an oathbreaker and draws the owner's hunters.",
+        "turn": "It places its own hand beneath the falling blade and breaks the seal.",
+        "aftermath": "Water crosses the forbidden threshold; the Yaksha faces outward as a self-chosen guardian."
+      }
+    ],
+    "beats": [
+      {
+        "beat_id": "B001",
+        "scene_id": "SC001",
+        "action": "The child crosses the dry threshold with an empty cup.",
+        "information": "Water exists, but ownership blocks access.",
+        "emotion": "fear resisted by necessity"
+      },
+      {
+        "beat_id": "B002",
+        "scene_id": "SC001",
+        "action": "The Yaksha appears and stops one claw-width from the child.",
+        "information": "It can kill her but chooses to listen.",
+        "emotion": "conditioned threat complicated by recognition"
+      },
+      {
+        "beat_id": "B003",
+        "scene_id": "SC002",
+        "action": "The Yaksha intercepts the hunter's blade with its left forearm and breaks the cistern seal with its right hand.",
+        "information": "It redefines the oath through an irreversible choice.",
+        "emotion": "terrified resolve beneath ceremonial control"
+      },
+      {
+        "beat_id": "B004",
+        "scene_id": "SC002",
+        "action": "Water passes around its feet toward the child while it turns to face the hunters.",
+        "information": "The monster image remains, but its moral position has changed.",
+        "emotion": "quiet defiance carrying protective tenderness"
+      }
+    ],
+    "dialogue": [
+      {
+        "beat_id": "B002",
+        "speaker": "CHR002",
+        "line": "你守的是水，还是他们的锁？"
+      }
+    ],
+    "ending_state": "The Yaksha loses sanctioned status and gains chosen responsibility."
+  }
+}

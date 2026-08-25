@@ -1,0 +1,99 @@
+{
+  "schema_version": "1.0.0",
+  "packet_type": "SHOT_PACKET",
+  "block_id": "SHP001",
+  "revision": 1,
+  "project_id": "YAKSHA-001",
+  "episode_id": "EP001",
+  "source_revision": "storyboard:SEQ001@1",
+  "depends_on": [
+    "TIM001@1",
+    "ASR001@1",
+    "ACT001@1",
+    "SEQ001@1"
+  ],
+  "status": "draft",
+  "locked_fields": [
+    "payload.shots[*].asset_refs",
+    "payload.shots[*].action_ref",
+    "payload.shots[*].storyboard_ref"
+  ],
+  "controlled_fields": {
+    "payload.shots[*].prompt": "may be adapted to a named generation platform"
+  },
+  "open_fields": [
+    "payload.platform_parameters"
+  ],
+  "assumptions": [
+    "Prompts are abbreviated to keep this fixture reviewable."
+  ],
+  "continuity_in": {
+    "CHR001.injury": "none",
+    "PRP001.state": "intact"
+  },
+  "continuity_out": {
+    "CHR001.injury": "left_forearm_cut_stage_1",
+    "PRP001.state": "broken",
+    "ENV001.state": "channel-flowing"
+  },
+  "change_log": [
+    {
+      "revision": 1,
+      "summary": "Assembled four traceable shot prompts from locked upstream blocks."
+    }
+  ],
+  "payload": {
+    "visual_profile": "cinematic-ai-comic",
+    "shots": [
+      {
+        "shot_id": "SH001",
+        "time_range": [40.0, 46.0],
+        "asset_refs": ["CHR001", "CHR002", "ENV001", "PRP001"],
+        "action_ref": "ACT001@1",
+        "storyboard_ref": "SEQ001@1",
+        "first_frame": "Choice geometry is visible before the blade enters.",
+        "key_action_frame": "Blade tip intrudes from screen right.",
+        "last_frame": "Yaksha shifts weight toward the child.",
+        "video_motion_prompt": "Hold the wide composition; let only the blade and Yaksha eyeline initiate movement.",
+        "prompt": "Cinematic AI comic frame, vertical 9:16, readable wide courtyard geometry, sealed cistern upstage left, child with empty cup downstage left, tall asymmetric Yaksha center right becoming the first visual layer through eyeline and silhouette, threat entering from screen right, restrained earth colors, directional dry wind, stable screen axis."
+      },
+      {
+        "shot_id": "SH002",
+        "time_range": [46.0, 53.0],
+        "asset_refs": ["CHR001", "PRP001"],
+        "action_ref": "ACT001@1",
+        "storyboard_ref": "SEQ001@1",
+        "first_frame": "Yaksha still obeys the old stance.",
+        "key_action_frame": "Eyes leave the seal and choose the child.",
+        "last_frame": "Left forearm begins to rise.",
+        "video_motion_prompt": "A restrained push follows the eyeline change; no facial redesign or sudden pose jump.",
+        "prompt": "Cinematic AI comic medium close three-quarter view on the established axis side, same Yaksha face, asymmetric mantle and left forearm oath bands, controlled threat interrupted by terrified resolve, eyes shift from the intact seal toward the child, left shoulder initiates the guard, dry side light and stable color blocks."
+      },
+      {
+        "shot_id": "SH003",
+        "time_range": [53.0, 61.0],
+        "asset_refs": ["CHR001", "ENV001", "PRP001"],
+        "action_ref": "ACT001@1",
+        "storyboard_ref": "SEQ001@1",
+        "first_frame": "Left forearm intercept path and right palm path are separate and readable.",
+        "key_action_frame": "Blade hits forearm as palm fractures seal.",
+        "last_frame": "Stone fragments fall before the water releases.",
+        "video_motion_prompt": "Preserve both contact points, body weight and reaction force; cloth and bands lag the torso.",
+        "prompt": "Cinematic AI comic medium-wide action frame, same courtyard coordinates and character design, left forearm intercepts a blade from screen right while the anchored pelvis transfers force into the rear leg, right palm fractures the chest-height cistern seal, two contact points fully visible, stone fragments falling, no magic glow, clear weight and reaction."
+      },
+      {
+        "shot_id": "SH004",
+        "time_range": [61.0, 70.0],
+        "asset_refs": ["CHR001", "CHR002", "ENV001", "PRP001"],
+        "action_ref": "ACT001@1",
+        "storyboard_ref": "SEQ001@1",
+        "first_frame": "Water pressure opens the broken seal.",
+        "key_action_frame": "Water passes the Yaksha's feet toward the child.",
+        "last_frame": "Wounded Yaksha faces the hunters while protecting the channel.",
+        "video_motion_prompt": "Retreat slowly with the first water; preserve wound, broken seal, screen directions and delayed cloth settlement.",
+        "prompt": "Cinematic AI comic layered wide from low water-channel height behind the child, water flows from the broken seal at screen left around the wounded Yaksha's feet, the same tall silhouette turns toward hunters at screen right, left forearm cut remains visible, quiet protective defiance, restrained reflected light grows from the water without changing the established palette."
+      }
+    ],
+    "negative_prompt": "identity drift, costume redesign, mirrored screen direction, weapon hand swap, missing wound, repaired seal, weightless contact, random glow, inconsistent comic rendering, poster composition, unreadable action"
+  }
+}

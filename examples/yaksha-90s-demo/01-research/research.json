@@ -1,0 +1,76 @@
+{
+  "schema_version": "1.0.0",
+  "packet_type": "RESEARCH_PACKET",
+  "block_id": "RSH001",
+  "revision": 1,
+  "project_id": "YAKSHA-001",
+  "episode_id": "EP001",
+  "source_revision": "world-mythology-dataset@7.0",
+  "depends_on": [],
+  "status": "review",
+  "locked_fields": [
+    "payload.evidence_layers",
+    "payload.adaptation_boundaries"
+  ],
+  "controlled_fields": {
+    "payload.project_thesis": "may change after source verification"
+  },
+  "open_fields": [
+    "payload.costume",
+    "payload.weapon",
+    "payload.setting"
+  ],
+  "assumptions": [
+    "This is a workflow fixture, not a completed mythology fact check."
+  ],
+  "continuity_in": {},
+  "continuity_out": {},
+  "change_log": [
+    {
+      "revision": 1,
+      "summary": "Built a deliberately cautious research handoff from local dataset hits."
+    }
+  ],
+  "payload": {
+    "subject": "夜叉",
+    "research_domain": "mythology",
+    "source_versions": [
+      "佛教宇宙论与神话数据集条目",
+      "中国志怪与民间神话数据集条目",
+      "印度神话相关数据集条目"
+    ],
+    "evidence_layers": {
+      "dataset": "The local dataset presents several non-identical Yaksha-related identities.",
+      "primary_sources": "Not verified in this fixture.",
+      "project_adaptation": "A feared threshold guardian chooses whom protection should serve."
+    },
+    "semantic_core": [
+      "identity is plural rather than a single universal monster",
+      "speed and liminality can become action motifs",
+      "guardian and threat can coexist as dramatic pressure"
+    ],
+    "adaptation_boundaries": [
+      "Do not claim one global canonical appearance.",
+      "Do not present the project guardian plot as scripture.",
+      "Verify primary sources before public factual claims."
+    ],
+    "visual_motifs": [
+      "threshold",
+      "sealed abundance beside public hunger",
+      "a silhouette read first as threat and later as protection"
+    ],
+    "action_motifs": [
+      "abrupt directional acceleration",
+      "interposition between authority and vulnerable people"
+    ],
+    "disputes": [
+      "Dataset relationships and source labels may contain reversed or blended claims."
+    ],
+    "unknowns": [
+      "specific textual version",
+      "region and historical period",
+      "authorized iconographic details"
+    ],
+    "project_thesis": "Protection without moral choice is only obedience."
+  }
+}

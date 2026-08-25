@@ -1,4 +1,4 @@
 interface:
   display_name: "电影级超写实提示词"
-  short_description: "从人物感情、表演与摄影过程生成电影镜头和情绪版提示词"
-  default_prompt: "使用 $craft-cinematic-image-prompts 从人物目标、情绪对象、表演策略、摄影机位置、场面调度、工业级布光、特效与连续性生成超写实电影镜头；需要时输出同一角色的独立情绪版提示词组。"
+  short_description: "合成真人电影或 AI 漫剧的摄影、布光、视效与最终逐镜提示词"
+  default_prompt: "使用 $craft-cinematic-image-prompts 从剧本、资产、动作和分镜包合成 SHOT_PACKET；按项目视觉 profile 输出首帧、关键帧、尾帧和视频运动提示词。"

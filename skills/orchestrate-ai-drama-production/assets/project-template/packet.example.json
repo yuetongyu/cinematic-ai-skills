@@ -1,0 +1,24 @@
+{
+  "schema_version": "1.0.0",
+  "packet_type": "RESEARCH_PACKET",
+  "block_id": "RSH001",
+  "revision": 1,
+  "project_id": "PROJECT-001",
+  "episode_id": "EP001",
+  "source_revision": "user-brief@1",
+  "depends_on": [],
+  "status": "draft",
+  "locked_fields": [],
+  "controlled_fields": {},
+  "open_fields": [],
+  "assumptions": [],
+  "continuity_in": {},
+  "continuity_out": {},
+  "change_log": [
+    {
+      "revision": 1,
+      "summary": "initial packet"
+    }
+  ],
+  "payload": {}
+}

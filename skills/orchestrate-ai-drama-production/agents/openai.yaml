@@ -1,0 +1,4 @@
+interface:
+  display_name: "AI 漫剧制片总控"
+  short_description: "编排研究、剧本、资产、动作、分镜与逐镜提示词生产链"
+  default_prompt: "使用 $orchestrate-ai-drama-production 把我的题材开发成可追溯、可分阶段返工的 AI 漫剧生产包。"

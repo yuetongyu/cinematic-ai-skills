@@ -1,0 +1,100 @@
+{
+  "schema_version": "1.0.0",
+  "packet_type": "ASSET_REGISTRY",
+  "block_id": "ASR001",
+  "revision": 1,
+  "project_id": "YAKSHA-001",
+  "episode_id": "EP001",
+  "source_revision": "script:SCR001@1",
+  "depends_on": [
+    "RSH001@1",
+    "SCR001@1",
+    "TIM001@1"
+  ],
+  "status": "draft",
+  "locked_fields": [
+    "payload.assets[*].immutable_dna"
+  ],
+  "controlled_fields": {
+    "payload.assets[*].state_versions": "only through referenced beat events"
+  },
+  "open_fields": [
+    "payload.assets[*].final_surface_detail"
+  ],
+  "assumptions": [
+    "Visual design remains project adaptation until a specific source version is selected."
+  ],
+  "continuity_in": {},
+  "continuity_out": {},
+  "change_log": [
+    {
+      "revision": 1,
+      "summary": "Extracted only repeatable and continuity-critical assets."
+    }
+  ],
+  "payload": {
+    "style_profile": "cinematic-ai-comic",
+    "assets": [
+      {
+        "asset_id": "CHR001",
+        "type": "character",
+        "name": "夜叉守门者",
+        "priority": "A",
+        "narrative_function": "A feared enforcer who becomes a self-chosen protector.",
+        "immutable_dna": [
+          "tall forward-weighted silhouette",
+          "asymmetric shoulder mantle",
+          "left forearm oath bands",
+          "face readable as dangerous but capable of restraint"
+        ],
+        "state_versions": ["base", "left-forearm-wounded", "water-reflection"],
+        "action_limits": ["right hand remains free to break the seal during B003"],
+        "scene_refs": ["SC001", "SC002"]
+      },
+      {
+        "asset_id": "CHR002",
+        "type": "character",
+        "name": "持杯女孩",
+        "priority": "B",
+        "narrative_function": "Forces a moral answer without defeating the guardian.",
+        "immutable_dna": ["small empty metal cup", "dust-coated layered clothing", "steady upward eyeline"],
+        "state_versions": ["dry", "feet-in-water"],
+        "action_limits": ["keeps both hands visible when offering the cup"],
+        "scene_refs": ["SC001", "SC002"]
+      },
+      {
+        "asset_id": "ENV001",
+        "type": "environment",
+        "name": "封水庭院",
+        "priority": "A",
+        "narrative_function": "Makes hoarded abundance and public drought visible in one space.",
+        "immutable_dna": ["dry public threshold", "elevated sealed cistern", "single narrow water channel"],
+        "state_versions": ["sealed-dry", "seal-fractured", "channel-flowing"],
+        "action_limits": ["clear path between seal, child and outer gate"],
+        "scene_refs": ["SC001", "SC002"]
+      },
+      {
+        "asset_id": "PRP001",
+        "type": "prop",
+        "name": "蓄水封印",
+        "priority": "A",
+        "narrative_function": "Physicalizes the oath and its transfer of ownership.",
+        "immutable_dna": ["palm-scale fracture point", "mounted at chest height", "mechanically releases the sluice"],
+        "state_versions": ["intact", "cracked", "broken"],
+        "action_limits": ["must be reachable by CHR001 right hand while shielding with left arm"],
+        "scene_refs": ["SC001", "SC002"]
+      },
+      {
+        "asset_id": "VFX001",
+        "type": "vfx",
+        "name": "门槛疾风",
+        "priority": "C",
+        "narrative_function": "Makes the Yaksha's abrupt speed and braking visible.",
+        "immutable_dna": ["screen-right to screen-left arrival flow", "dust displaced before cloth settles"],
+        "state_versions": ["arrival-burst", "edge-vortices", "dissipated"],
+        "action_limits": ["does not glow"],
+        "scene_refs": ["SC001"]
+      }
+    ]
+  }
+}
