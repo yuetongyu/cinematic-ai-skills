@@ -91,6 +91,33 @@ def numeric_range(value: Any) -> tuple[float, float] | None:
     return None
 
 
+def validate_four_grid(
+    path: Path,
+    payload: dict[str, Any],
+    label: str,
+    issues: list[str],
+) -> dict[str, Any] | None:
+    for legacy_field in ("panel_prompts", "contact_sheet_prompt"):
+        if legacy_field in payload:
+            issues.append(f"{path}: {label} uses legacy four-grid field {legacy_field}")
+    grid = payload.get("four_grid")
+    if not isinstance(grid, dict):
+        issues.append(f"{path}: {label} needs one four_grid object")
+        return None
+    if grid.get("canvas_aspect_ratio") != "16:9":
+        issues.append(f"{path}: {label} four_grid canvas_aspect_ratio must be 16:9")
+    if grid.get("layout") != "2x2":
+        issues.append(f"{path}: {label} four_grid layout must be 2x2")
+    if grid.get("output_count") != 1:
+        issues.append(f"{path}: {label} four_grid output_count must be 1")
+    expected_order = ["top-left", "top-right", "bottom-left", "bottom-right"]
+    if grid.get("reading_order") != expected_order:
+        issues.append(f"{path}: {label} four_grid reading_order is invalid")
+    if not isinstance(grid.get("prompt"), str) or not grid["prompt"].strip():
+        issues.append(f"{path}: {label} four_grid needs one whole-image prompt")
+    return grid
+
+
 def validate_timing(
     path: Path,
     packet: dict[str, Any],
@@ -366,6 +393,25 @@ def main() -> int:
         if not isinstance(payload, dict):
             continue
         if packet.get("packet_type") == "ACTION_PACKET":
+            four_grid = validate_four_grid(path, payload, "action", issues)
+            if four_grid is not None:
+                panels = list_items(four_grid.get("panels"))
+                if len(panels) != 4:
+                    issues.append(f"{path}: action four_grid must contain exactly four panels")
+                expected_panels = ["A", "B", "C", "D"]
+                actual_panels = [
+                    panel.get("panel") if isinstance(panel, dict) else None
+                    for panel in panels
+                ]
+                if actual_panels != expected_panels:
+                    issues.append(f"{path}: action four_grid panels must be A, B, C, D")
+                for panel in panels:
+                    if (
+                        not isinstance(panel, dict)
+                        or not isinstance(panel.get("description"), str)
+                        or not panel["description"].strip()
+                    ):
+                        issues.append(f"{path}: every action panel needs a description")
             if payload.get("scene_id") not in scene_ids:
                 issues.append(f"{path}: unresolved action scene_id {payload.get('scene_id')}")
             if payload.get("beat_id") not in beat_ids:
@@ -399,6 +445,18 @@ def main() -> int:
                 if not isinstance(asset_ref, str) or asset_ref not in asset_ids:
                     issues.append(f"{path}: unresolved action asset_ref {asset_ref}")
         elif packet.get("packet_type") == "STORYBOARD_PACKET":
+            four_grid = validate_four_grid(path, payload, "storyboard", issues)
+            if four_grid is not None:
+                shot_refs = list_items(four_grid.get("shot_refs"))
+                shot_ids = [
+                    shot.get("shot_id")
+                    for shot in list_items(payload.get("shots"))
+                    if isinstance(shot, dict) and isinstance(shot.get("shot_id"), str)
+                ]
+                if len(shot_refs) != 4:
+                    issues.append(f"{path}: storyboard four_grid must contain four shot_refs")
+                if shot_refs != shot_ids:
+                    issues.append(f"{path}: storyboard four_grid shot_refs must match shot order")
             if payload.get("scene_id") not in scene_ids:
                 issues.append(f"{path}: unresolved storyboard scene_id {payload.get('scene_id')}")
             for beat_ref in list_items(payload.get("beat_refs")):

@@ -2,12 +2,12 @@
   "schema_version": "1.0.0",
   "packet_type": "CONTINUITY_LEDGER",
   "block_id": "CON001",
-  "revision": 1,
+  "revision": 2,
   "project_id": "YAKSHA-001",
   "episode_id": "EP001",
-  "source_revision": "shots:SHP001@1",
+  "source_revision": "shots:SHP001@2",
   "depends_on": [
-    "SHP001@1"
+    "SHP001@2"
   ],
   "status": "review",
   "locked_fields": [
@@ -27,6 +27,10 @@
     {
       "revision": 1,
       "summary": "Recorded the irreversible state progression across SH001-SH004."
+    },
+    {
+      "revision": 2,
+      "summary": "Revalidated continuity against SHP001@2 after the four-grid contract change."
     }
   ],
   "payload": {

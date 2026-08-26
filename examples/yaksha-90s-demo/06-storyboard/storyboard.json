@@ -2,20 +2,21 @@
   "schema_version": "1.0.0",
   "packet_type": "STORYBOARD_PACKET",
   "block_id": "SEQ001",
-  "revision": 1,
+  "revision": 2,
   "project_id": "YAKSHA-001",
   "episode_id": "EP001",
-  "source_revision": "action:ACT001@1",
+  "source_revision": "action:ACT001@2",
   "depends_on": [
     "SCR001@1",
     "TIM001@1",
     "ASR001@1",
-    "ACT001@1"
+    "ACT001@2"
   ],
   "status": "draft",
   "locked_fields": [
     "payload.shots",
-    "payload.axis_map"
+    "payload.axis_map",
+    "payload.four_grid"
   ],
   "controlled_fields": {
     "payload.cinematography_profile": "final camera implementation remains open"
@@ -40,6 +41,10 @@
     {
       "revision": 1,
       "summary": "Converted ACT001 into a four-shot audience path."
+    },
+    {
+      "revision": 2,
+      "summary": "Changed the storyboard four-grid contract to one 16:9 image with a fixed 2x2 layout."
     }
   ],
   "payload": {
@@ -54,7 +59,7 @@
     "screen_direction": "Threat enters from screen right; water exits toward screen left.",
     "spatial_map": "Seal upstage-left, child downstage-left, Yaksha center-right, hunters offscreen-right.",
     "asset_refs": ["CHR001", "CHR002", "ENV001", "PRP001"],
-    "action_refs": ["ACT001@1"],
+    "action_refs": ["ACT001@2"],
     "cinematography_profile": "cinematic-ai-comic with restrained movement and readable silhouettes",
     "shots": [
       {
@@ -66,7 +71,7 @@
         "shot_size": "wide",
         "camera_motion": "locked",
         "cut_out": "hunter blade enters frame from screen right",
-        "prompt": "Vertical 9:16 cinematic AI comic storyboard frame, locked eye-level wide shot from the courtyard side of the seal-to-gate axis. The sealed cistern is upstage-left, the thirsty child downstage-left, the Yaksha guardian center-right between child and unseen hunters. Keep all three moral positions readable and leave screen-right negative space for the entering blade; restrained grayscale storyboard values with the water channel as the only cool accent."
+        "panel_description": "Project-intent vertical 9:16 composition represented inside the board panel: locked eye-level wide shot from the courtyard side of the seal-to-gate axis. The sealed cistern is upstage-left, the thirsty child downstage-left, the Yaksha guardian center-right between child and unseen hunters. Keep all three moral positions readable and leave screen-right negative space for the entering blade; restrained grayscale storyboard values with the water channel as the only cool accent."
       },
       {
         "shot_id": "SH002",
@@ -77,7 +82,7 @@
         "shot_size": "medium close",
         "camera_motion": "small motivated push",
         "cut_out": "left forearm commits upward",
-        "prompt": "Vertical 9:16 cinematic AI comic storyboard frame, same side of the axis, three-quarter medium close view of the Yaksha. The child remains partially visible behind the guardian's shoulder and the seal stays at frame-left. A small motivated push isolates the decision: right palm nearing the seal, left forearm just beginning to rise, gaze fixed toward the threat at screen right. Preserve wardrobe, oath bands and untouched seal state."
+        "panel_description": "Project-intent vertical 9:16 composition represented inside the board panel: same side of the axis, three-quarter medium close view of the Yaksha. The child remains partially visible behind the guardian's shoulder and the seal stays at frame-left. A small motivated push isolates the decision: right palm nearing the seal, left forearm just beginning to rise, gaze fixed toward the threat at screen right. Preserve wardrobe, oath bands and untouched seal state."
       },
       {
         "shot_id": "SH003",
@@ -88,7 +93,7 @@
         "shot_size": "medium wide",
         "camera_motion": "brief reactive displacement, then settles",
         "cut_out": "first water pressure opens the crack",
-        "prompt": "Vertical 9:16 cinematic AI comic storyboard frame, medium-wide from the established courtyard side, camera nearly perpendicular to both contacts. The hunter blade strikes the Yaksha's raised left forearm while the right palm breaks the cistern seal; show support feet, force lines and both contact points without occlusion. Stone dust precedes the first widening thread of water; no decorative energy glow."
+        "panel_description": "Project-intent vertical 9:16 composition represented inside the board panel: medium-wide from the established courtyard side, camera nearly perpendicular to both contacts. The hunter blade strikes the Yaksha's raised left forearm while the right palm breaks the cistern seal; show support feet, force lines and both contact points without occlusion. Stone dust precedes the first widening thread of water; no decorative energy glow."
       },
       {
         "shot_id": "SH004",
@@ -99,11 +104,18 @@
         "shot_size": "layered wide",
         "camera_motion": "slow retreat with the water",
         "cut_out": "Yaksha finishes turning toward screen right",
-        "prompt": "Vertical 9:16 cinematic AI comic storyboard frame from low water-channel height behind the child, layered wide composition. Released water travels toward the camera and screen left while the wounded Yaksha stands beyond it, turning toward hunters at screen right. The broken seal and wet courtyard remain visible; the camera retreats slowly with the water so physical consequence and moral choice dominate the image."
+        "panel_description": "Project-intent vertical 9:16 composition represented inside the board panel: low water-channel height behind the child, layered wide composition. Released water travels toward the camera and screen left while the wounded Yaksha stands beyond it, turning toward hunters at screen right. The broken seal and wet courtyard remain visible; the camera retreats slowly with the water so physical consequence and moral choice dominate the image."
       }
     ],
     "cut_logic": "space to decision to contact to consequence",
     "sound_bridge": "blade whistle enters SH001; water begins before SH004 image",
-    "contact_sheet_prompt": "A 2x2 vertical-frame storyboard contact sheet with four equal panels and one continuous screen axis. Panel order: wide choice geometry, medium decision, readable double contact, low consequence view following released water. Preserve the same Yaksha, child, courtyard, seal state progression and screen directions across all panels. Use restrained cinematic AI comic storyboard rendering; no poster poses, no duplicated angle, no embedded labels or random color shifts."
+    "four_grid": {
+      "canvas_aspect_ratio": "16:9",
+      "layout": "2x2",
+      "output_count": 1,
+      "reading_order": ["top-left", "top-right", "bottom-left", "bottom-right"],
+      "shot_refs": ["SH001", "SH002", "SH003", "SH004"],
+      "prompt": "One single 16:9 image, fixed 2x2 four-panel cinematic storyboard, exactly one output image, no separate images. Four equal panels read top-left, top-right, bottom-left, bottom-right and share one continuous screen axis, the same Yaksha, child, courtyard, seal and restrained cinematic AI comic rendering. Each panel internally preserves the project's vertical 9:16 composition-safe area without changing the outer 16:9 board. Top-left: wide choice geometry. Top-right: medium decision. Bottom-left: readable double contact. Bottom-right: low consequence view following released water. Preserve seal damage progression and screen directions; no poster poses, duplicated angles, embedded labels or random color shifts."
+    }
   }
 }

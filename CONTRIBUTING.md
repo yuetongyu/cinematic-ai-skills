@@ -15,8 +15,9 @@ prompt adjectives or one-off project lore.
    parameters presented as universal rules.
 6. Do not let a downstream skill silently rewrite upstream `locked_fields`.
    Increment the upstream revision and update only affected dependencies.
-7. Keep action contact sheets and storyboard contact sheets semantically
-   separate; both should retain independent-panel prompts.
+7. Keep action four-grids and storyboard four-grids semantically separate.
+   Each grid must be one 16:9 image with a 2x2 layout and one whole-image
+   generation prompt, never four separate image outputs.
 
 Validate a skill with the current Codex `skill-creator` validator when it is
 available. Also check that Markdown fences are balanced and that referenced

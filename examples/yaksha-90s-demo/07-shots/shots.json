@@ -2,15 +2,15 @@
   "schema_version": "1.0.0",
   "packet_type": "SHOT_PACKET",
   "block_id": "SHP001",
-  "revision": 1,
+  "revision": 2,
   "project_id": "YAKSHA-001",
   "episode_id": "EP001",
-  "source_revision": "storyboard:SEQ001@1",
+  "source_revision": "storyboard:SEQ001@2",
   "depends_on": [
     "TIM001@1",
     "ASR001@1",
-    "ACT001@1",
-    "SEQ001@1"
+    "ACT001@2",
+    "SEQ001@2"
   ],
   "status": "draft",
   "locked_fields": [
@@ -40,6 +40,10 @@
     {
       "revision": 1,
       "summary": "Assembled four traceable shot prompts from locked upstream blocks."
+    },
+    {
+      "revision": 2,
+      "summary": "Updated action and storyboard dependencies after the single-image four-grid contract change."
     }
   ],
   "payload": {
@@ -49,8 +53,8 @@
         "shot_id": "SH001",
         "time_range": [40.0, 46.0],
         "asset_refs": ["CHR001", "CHR002", "ENV001", "PRP001"],
-        "action_ref": "ACT001@1",
-        "storyboard_ref": "SEQ001@1",
+        "action_ref": "ACT001@2",
+        "storyboard_ref": "SEQ001@2",
         "first_frame": "Choice geometry is visible before the blade enters.",
         "key_action_frame": "Blade tip intrudes from screen right.",
         "last_frame": "Yaksha shifts weight toward the child.",
@@ -61,8 +65,8 @@
         "shot_id": "SH002",
         "time_range": [46.0, 53.0],
         "asset_refs": ["CHR001", "PRP001"],
-        "action_ref": "ACT001@1",
-        "storyboard_ref": "SEQ001@1",
+        "action_ref": "ACT001@2",
+        "storyboard_ref": "SEQ001@2",
         "first_frame": "Yaksha still obeys the old stance.",
         "key_action_frame": "Eyes leave the seal and choose the child.",
         "last_frame": "Left forearm begins to rise.",
@@ -73,8 +77,8 @@
         "shot_id": "SH003",
         "time_range": [53.0, 61.0],
         "asset_refs": ["CHR001", "ENV001", "PRP001"],
-        "action_ref": "ACT001@1",
-        "storyboard_ref": "SEQ001@1",
+        "action_ref": "ACT001@2",
+        "storyboard_ref": "SEQ001@2",
         "first_frame": "Left forearm intercept path and right palm path are separate and readable.",
         "key_action_frame": "Blade hits forearm as palm fractures seal.",
         "last_frame": "Stone fragments fall before the water releases.",
@@ -85,8 +89,8 @@
         "shot_id": "SH004",
         "time_range": [61.0, 70.0],
         "asset_refs": ["CHR001", "CHR002", "ENV001", "PRP001"],
-        "action_ref": "ACT001@1",
-        "storyboard_ref": "SEQ001@1",
+        "action_ref": "ACT001@2",
+        "storyboard_ref": "SEQ001@2",
         "first_frame": "Water pressure opens the broken seal.",
         "key_action_frame": "Water passes the Yaksha's feet toward the child.",
         "last_frame": "Wounded Yaksha faces the hunters while protecting the channel.",

@@ -1,4 +1,4 @@
 interface:
   display_name: "世界级电影动作指导"
-  short_description: "把剧情动作拆成有重量、可追踪并能连续生成的动作四宫格"
-  default_prompt: "使用 $craft-cinematic-action-design 根据剧本节拍设计 AI 可理解的动作路径、受力关系和四宫格关键姿态。"
+  short_description: "把剧情动作拆成一张16:9画布中有重量且连续的2×2动作四宫格"
+  default_prompt: "使用 $craft-cinematic-action-design 根据剧本节拍设计动作路径和受力关系，只输出一张 16:9、2×2 的动作四宫格提示词。"

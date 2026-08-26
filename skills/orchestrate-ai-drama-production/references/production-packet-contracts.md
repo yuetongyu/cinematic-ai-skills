@@ -132,11 +132,13 @@ Packet 是专业 skill 之间的最小可靠交接，不是把全部创作写成
 
 - 参照动作 skill 的 `ACTION_PACKET`。
 - 必须引用 scene、beat、timing、participant 和 asset。
+- `four_grid` 必须声明 `canvas_aspect_ratio: 16:9`、`layout: 2x2`、`output_count: 1`，并把四个动作相位合成为一条整图提示词。
 
 ### STORYBOARD_PACKET
 
 - 参照分镜 skill 的 `STORYBOARD_PACKET`。
 - 必须引用 scene、beat、timing、上游动作和资产版本。
+- `four_grid` 必须是一张 16:9 图片中的 2×2 四镜，不得包含四条独立生图提示词。超过四镜时建立新的 `SEQ` Packet。
 
 ### SHOT_PACKET
 
@@ -190,4 +192,5 @@ Packet 是专业 skill 之间的最小可靠交接，不是把全部创作写成
 - 时间段 start < end，整体时长符合项目目标。
 - 下游引用的 asset/action/shot ID 必须存在。
 - 动作与分镜引用的 scene/beat/timing ID 必须存在；最终镜头时间必须与分镜镜头一致。
+- ACTION/STORYBOARD 的四宫格必须是单张 16:9、2×2、`output_count: 1`，四格阅读顺序固定。
 - 连续性输入与上游输出冲突时必须声明 override 和剧情理由。

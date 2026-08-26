@@ -87,11 +87,21 @@ def main() -> int:
         assert_result(invalid.returncode == 1, "Shot/storyboard time mismatch was not rejected")
         assert_result("time_range differs from storyboard" in invalid.stdout, invalid.stdout)
 
+        broken_four_grid = temp / "broken-four-grid"
+        shutil.copytree(EXAMPLE, broken_four_grid)
+        action_path = broken_four_grid / "05-action" / "action.json"
+        action_packet = json.loads(action_path.read_text(encoding="utf-8"))
+        action_packet["payload"]["four_grid"]["output_count"] = 4
+        write_json(action_path, action_packet)
+        invalid = run(VALIDATE, broken_four_grid, "--json")
+        assert_result(invalid.returncode == 1, "Four separate grid outputs were not rejected")
+        assert_result("four_grid output_count must be 1" in invalid.stdout, invalid.stdout)
+
         cyclic = temp / "cyclic"
         shutil.copytree(EXAMPLE, cyclic)
         research_path = cyclic / "01-research" / "research.json"
         research_packet = json.loads(research_path.read_text(encoding="utf-8"))
-        research_packet["depends_on"] = ["CON001@1"]
+        research_packet["depends_on"] = ["CON001@2"]
         write_json(research_path, research_packet)
         invalid = run(VALIDATE, cyclic, "--json")
         assert_result(invalid.returncode == 1, "Dependency cycle was not rejected")
